@@ -7,6 +7,10 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
  * App-wide Styles
  */
 
+body {
+  margin: 0;
+}
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -21,7 +25,10 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
     }
 }
 
+@import 'variables.scss';
 // Component styles are injected through grunt
 // injector
+@import 'griddly/griddly.scss';
 @import 'main/main.scss';
+@import 'variables.scss';
 // endinjector
