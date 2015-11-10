@@ -1,12 +1,15 @@
 'use strict';
 
-angular.module('charaApp', [
+
+var app = angular.module('charaApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
   'ui.router'
-])
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+]);
+
+
+app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider
       .otherwise('/');
 
