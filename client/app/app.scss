@@ -1,8 +1,9 @@
 $fa-font-path: "/bower_components/font-awesome/fonts";
+$material-path: "/bower_compontents/material-design-icons/iconfont/";
 
 @import 'font-awesome/scss/font-awesome';
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
-
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 /**
  * App-wide Styles
  */
@@ -26,11 +27,23 @@ body {
     }
 }
 
+.block {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.animate {
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
 @import 'variables.scss';
 // Component styles are injected through grunt
 // injector
 @import 'clock/clock.scss';
 @import 'griddly/griddly.scss';
+@import 'lights/lights.scss';
 @import 'main/main.scss';
 @import 'variables.scss';
 // endinjector

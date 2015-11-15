@@ -32,7 +32,8 @@ app.directive('griddly', function () {
         height: 1,
         x: 1,
         y: 0,
-        color: '#'+Math.floor(Math.random()*16777215).toString(16)
+        color: '#'+Math.floor(Math.random()*16777215).toString(16),
+        view: 'app/views/_lights.html'
       });
       $scope.grid.add({
         width: 1,

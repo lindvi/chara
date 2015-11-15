@@ -1,7 +1,7 @@
 <div class="griddly">
   <div class="container" ng-repeat="container in grid.containers" ng-style="{top: container.posY + '%', left: container.posX + '%', width: container.htmlWidth + '%', height: container.htmlHeight + '%'}">
     <div class="card shadow--1">
-      <ng-include src="container.view" class="center--align">
+      <ng-include src="container.view" class="center--align block">
     </div>
   </div>
 </div>
