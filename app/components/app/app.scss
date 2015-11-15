@@ -1,16 +1,11 @@
+
 $fa-font-path: "/bower_components/font-awesome/fonts";
 
 @import 'font-awesome/scss/font-awesome';
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 
 /**
  * App-wide Styles
  */
-
-body {
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-}
 
 .browsehappy {
     margin: 0.2em 0;
@@ -26,11 +21,7 @@ body {
     }
 }
 
-@import 'variables.scss';
 // Component styles are injected through grunt
 // injector
-@import 'clock/clock.scss';
-@import 'griddly/griddly.scss';
 @import 'main/main.scss';
-@import 'variables.scss';
 // endinjector

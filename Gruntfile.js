@@ -103,8 +103,7 @@ module.exports = function (grunt) {
           '<%= yeoman.client %>/assets/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}'
         ],
         options: {
-          livereload: 35730,
-          port: 35730
+          livereload: true
         }
       },
       express: {
@@ -113,7 +112,7 @@ module.exports = function (grunt) {
         ],
         tasks: ['express:dev', 'wait'],
         options: {
-          livereload: 35730,
+          livereload: true,
           nospawn: true //Without this option specified express won't be reloaded
         }
       }
