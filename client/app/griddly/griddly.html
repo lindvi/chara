@@ -1,6 +1,8 @@
-<div class="griddly">
+<div class="griddly" id="grid">
+  <div class="bgImg"></div>
   <div class="container" ng-repeat="container in grid.containers" ng-style="{top: container.posY + '%', left: container.posX + '%', width: container.htmlWidth + '%', height: container.htmlHeight + '%'}">
-    <div class="card shadow--1">
+    <div class="blurred" ng-if="container.blur"></div>
+    <div class="card shadow--1"  ng-class="{'default': container.default}">
       <ng-include src="container.view" class="center--align block">
     </div>
   </div>

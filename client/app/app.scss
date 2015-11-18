@@ -33,9 +33,17 @@ body {
   height: 100%;
 }
 
+.text--center {
+  text-align: center;
+}
+
 .animate {
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
+}
+
+.no--margin {
+  margin: 0;
 }
 
 @import 'variables.scss';

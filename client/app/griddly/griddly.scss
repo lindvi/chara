@@ -9,20 +9,24 @@
   }
 
   .card {
-    background-color: $dark-blue;
-    position: absolute;
-    width: calc(100% - 16px);
-    height: calc(100% - 16px);
-    top: 8px;
-    left: 8px;
     color: rgba(white, 75%);
+    &.default {
+      background-color: $dark-blue;
+      position: absolute;
+      width: calc(100% - 16px);
+      height: calc(100% - 16px);
+      top: 8px;
+      left: 8px;
+    }
+
+
   }
 }
 
 .shadow--1 {
   box-shadow:
-    0 1px 6px 0 rgba(0, 0, 0, 0.12),
-    0 1px  6px 0 rgba(0, 0, 0, 0.12);
+  0 1px 6px 0 rgba(0, 0, 0, 0.12),
+  0 1px  6px 0 rgba(0, 0, 0, 0.12);
 }
 
 .center--align {
@@ -31,4 +35,31 @@
   left: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
+}
+
+.bgImg {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+.blurred {
+  height: 100%;
+  width: 100%;
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+  filter: url(#blur);
+  overflow: hidden;
+  background-size: 144vw 100vh;
+  span,
+  div {
+    filter: blur(0px);
+   -webkit-filter: blur(0px);
+   -moz-filter: blur(0px);
+   -o-filter: blur(0px);
+   -ms-filter: blur(0px);
+ }
 }
