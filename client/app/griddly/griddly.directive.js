@@ -54,6 +54,7 @@ app.directive('griddly', ['$http', function ($http) {
         x: 1,
         y: 1,
         color: '#'+Math.floor(Math.random()*16777215).toString(16),
+        view: 'app/views/_traffic.html',
         blur: false
       });
 

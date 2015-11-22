@@ -1,0 +1,21 @@
+<div class="">
+
+  <div ng-repeat="station in stations" ng-click="checkTimetable(station)" ng-if="!currentStation">
+    <h4 class="thin">
+      {{station.Name}}
+    </h4>
+  </div>
+  <div ng-if="currentStation">
+    <div class="back__arrow">
+    </div>
+    <div>
+      <i class="material-icons" ng-click="clearStation()">arrow_back</i>
+      <h3>
+        {{currentStation.Name}}
+      </h3>
+    </div>
+    <div ng-repeat="line in currentStation.info.Metros">
+      {{line.Destination}} - {{line.DisplayTime}}
+    </div>
+  </div>
+</div>

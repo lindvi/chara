@@ -1,0 +1,25 @@
+<div class="lights">
+<div ng-if="lights[1] !== undefined">
+    <h3 class="thin">Lampor</h3>
+    <button ng-repeat="light in lights track by $index" ng-click="toggleLight($index, light)" class="light__button">
+      <div>
+        <i class="material-icons"><span ng-if="light.state.on">brightness_high</span><span ng-if="!light.state.on">brightness_low</span></i>
+      </div>
+      <span class="label">
+        {{light.name}}
+      </span>
+    </button>
+    <div>
+      <h3 class="thin">Predefined</h3>
+      <button ng-click="usePredefined('sleep')" class="light__button">
+        <div>
+          <i class="material-icons"><span>brightness_high</span></i>
+        </div>
+        <span class="label">
+          Sova
+        </span>
+      </button>
+    </div>
+  </div>
+  <h1 class="center--align thin text--center" ng-if="lights[1] === undefined">:( <br> No lights found</h1>
+</div>
