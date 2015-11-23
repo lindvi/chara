@@ -1,9 +1,13 @@
+.lights {
+  padding: 5px;
+}
+
 .light__button {
   @extend .animate;
   background-color: transparent;
   border: 0;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   margin: 5px;
   font-size: 40px;
   text-align: center;
@@ -21,8 +25,12 @@
   }
 }
 
-.lights {
-  h3 {
-    margin: 8px 16px;
-  }
+.light__head {
+  margin: 0;
+}
+
+.light__box {
+  background: rgba(white, .25);
+  border: 1px solid white;
+  width: 100%;
 }

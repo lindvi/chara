@@ -1,6 +1,10 @@
 .clock {
+  background: rgba(white, .25);
+  border: 1px solid white;
+  width: 80%;
+  text-align: center;
   font-size: 120px;
-
+  padding: 10px 0;
   .date {
     font-size: 40px;
   }

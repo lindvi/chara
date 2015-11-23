@@ -1,21 +1,27 @@
-<div class="">
+<div class="traffic">
 
-  <div ng-repeat="station in stations" ng-click="checkTimetable(station)" ng-if="!currentStation">
-    <h4 class="thin">
-      {{station.Name}}
-    </h4>
+  <div class="clearfix">
+
+    <div class="current__state">
+      <form ng-submit="searchForStation()">
+        <input type="text" ng-model="currentStation.Name" class="traffic__input">
+      </form>
+    </div>
+    <button class="left__state" ng-click="clearStation()">
+      <i class="material-icons">clear</i>
+    </button>
   </div>
   <div ng-if="currentStation">
-    <div class="back__arrow">
+    <div class="metro__direction">
+      <div ng-repeat="line in currentStation.info.Metros" class="metro__line" ng-if="line.JourneyDirection === 1">
+        <i class="material-icons">directions_subway</i> <span>{{line.Destination}} - {{line.DisplayTime}}</span>
+      </div>
     </div>
-    <div>
-      <i class="material-icons" ng-click="clearStation()">arrow_back</i>
-      <h3>
-        {{currentStation.Name}}
-      </h3>
-    </div>
-    <div ng-repeat="line in currentStation.info.Metros">
-      {{line.Destination}} - {{line.DisplayTime}}
+    <div class="metro__direction">
+      <div ng-repeat="line in currentStation.info.Metros" class="metro__line" ng-if="line.JourneyDirection === 2">
+        <i class="material-icons">directions_subway</i> <span>{{line.Destination}} - {{line.DisplayTime}}</span>
+      </div>
     </div>
   </div>
+</div>
 </div>

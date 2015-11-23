@@ -54,6 +54,14 @@ body {
   float: right;
 }
 
+.clearfix:after {
+   content: " ";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
 @import 'variables.scss';
 // Component styles are injected through grunt
 // injector
