@@ -69,6 +69,12 @@ module.exports = function (grunt) {
         ],
         tasks: ['injector:css']
       },
+      injectManifest: {
+        files: [
+          '<%= yeoman.client %>/{app,components}/manifest.json'
+        ],
+        tasks: ['injector:manifest']
+      },
       mochaTest: {
         files: ['server/**/*.spec.js'],
         tasks: ['env:test', 'mochaTest']
@@ -538,6 +544,22 @@ module.exports = function (grunt) {
         files: {
           '<%= yeoman.client %>/index.html': [
             '<%= yeoman.client %>/{app,components}/**/*.css'
+          ]
+        }
+      },
+      manifest: {
+        ptions: {
+          transform: function(filePath) {
+            filePath = filePath.replace('/client/', '');
+            filePath = filePath.replace('/.tmp/', '');
+            return '<link rel="manifest" href="' + filePath + '">';
+          },
+          starttag: '<!-- injector:manifest -->',
+          endtag: '<!-- endinjector -->'
+        },
+        files: {
+          '<%= yeoman.client %>/index.html': [
+            '<%= yeoman.client %>/{app,components}/**/manifest.json'
           ]
         }
       }
