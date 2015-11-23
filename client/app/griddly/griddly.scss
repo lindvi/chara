@@ -1,10 +1,17 @@
 .griddly {
+  overflow: hidden;
   width: 100vw;
   height: 100vh;
   position: relative;
   background-color: $darker-blue;
 
+  .page__slide {
+    @extend .animate;
+  }
+
   .container {
+    width: 100vw;
+    height: 100vh;
     position: absolute;
   }
 
@@ -29,13 +36,7 @@
   0 1px  6px 0 rgba(0, 0, 0, 0.12);
 }
 
-.center--align {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-}
+
 
 .bgImg {
   display: block;

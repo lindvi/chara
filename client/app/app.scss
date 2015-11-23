@@ -27,6 +27,22 @@ body {
     }
 }
 
+.center--align {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.vertical--align {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: calc(100% - 10px);
+}
+
 .block {
   display: block;
   width: 100%;
@@ -65,6 +81,7 @@ body {
 @import 'variables.scss';
 // Component styles are injected through grunt
 // injector
+@import 'calendar/calendar.scss';
 @import 'clock/clock.scss';
 @import 'griddly/griddly.scss';
 @import 'lights/lights.scss';

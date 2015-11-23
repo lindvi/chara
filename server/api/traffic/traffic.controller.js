@@ -34,8 +34,6 @@ exports.index = function(req, res) {
 };
 
 exports.lookup = function(req, res) {
-  console.log(req.body);
-
   http.get({
     host: 'api.sl.se',
     path: '/api2/realtimedepartures.json?key=' + apiKeys.realtime + '&siteid=' + req.body.siteId + '&timewindow=60',
@@ -49,8 +47,14 @@ exports.lookup = function(req, res) {
     });
 
     response.on("end", function (err) {
-      data = JSON.parse(buffer);
-      res.send(data);
+      if (buffer){
+        try{
+          data = JSON.parse(buffer);
+          res.send(data);
+        }catch(e){
+          console.error(e); //error in the above string(in this case,yes)!
+        }
+      }
     });
   });
 };
