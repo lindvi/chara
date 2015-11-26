@@ -20,7 +20,7 @@ app.factory('LightFactory', ['$http', '$interval', function ($http, $interval) {
   LightService.toggleLight = function(index, light){
 
     var param = {id: (index+1), state: {}};
-    param.state = {"on":!light.state.on, "bri": 254, "xy":[0.3852,0.3737]}
+    param.state = {"on":!light.state.on, "bri": 254, "xy":[0.4236,0.3811]}
     return $http({
       method: 'PUT',
       url: '/api/lights',
@@ -38,7 +38,7 @@ app.factory('LightFactory', ['$http', '$interval', function ($http, $interval) {
 
   LightService.increase = function(index, light){
     var param = {id: (index+1), state: {}};
-    param.state = {"on":true, "bri": light.state.bri+25, "xy":[0.3852,0.3737]}
+    param.state = {"on":true, "bri": light.state.bri+25, "xy":[0.4236,0.3811]}
     return $http({
       method: 'PUT',
       url: '/api/lights/',
@@ -58,7 +58,7 @@ app.factory('LightFactory', ['$http', '$interval', function ($http, $interval) {
 
   LightService.decrease = function(index, light){
     var param = {id: (index+1), state: {}};
-    param.state = {"on":true, "bri": light.state.bri-25, "xy":[0.3852,0.3737]}
+    param.state = {"on":true, "bri": light.state.bri-25, "xy":[0.4236,0.3811]}
     return $http({
       method: 'PUT',
       url: '/api/lights',
