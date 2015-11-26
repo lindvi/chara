@@ -29,7 +29,6 @@ exports.index = function(req, res) {
 
 
 exports.toggle = function(req, res) {
-  console.log(req.body.state);
   var options = {
     uri: 'http://192.168.2.3/api/1593afc71aba483f67bb1b73f41cc2f/lights/'+(req.body.id)+'/state',
     method: 'PUT',
