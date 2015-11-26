@@ -7,10 +7,18 @@ app.directive('lights', ['LightFactory', '$timeout', function (LightFactory, $ti
     replace: true,
     link: function ($scope, element, attrs) {
       $scope.factory = LightFactory;
-
+      $scope.prefabs = LightFactory.predefined;
       $scope.factory.getLights().success(function(promise){
         $scope.lights = promise;
       });
+
+      $scope.increaseBrightness = function(index, light){
+        LightFactory.increase(index, light);
+      };
+
+      $scope.decreaseBrightness = function(index, light){
+        LightFactory.decrease(index, light);
+      };
 
       $scope.toggleLight = function(index, light){
         LightFactory.toggleLight(index, light);

@@ -43,6 +43,18 @@ body {
   width: calc(100% - 10px);
 }
 
+.button {
+  background: transparent;
+  border: 0;
+  color: white;
+  outline: none;
+}
+
+.divider {
+  height: 1px;
+  background-color: rgba(white, .5);
+}
+
 .block {
   display: block;
   width: 100%;

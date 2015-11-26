@@ -16,7 +16,7 @@ app.factory('TrafficFactory', ['$http', function ($http) {
       return promise.ResponseData;
     })
     .error(function (promise) {
-      console.error(promise);
+      //console.error(promise);
     });
   };
 

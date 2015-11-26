@@ -8,5 +8,6 @@ var router = express.Router();
 router.get('/', controller.index);
 router.put('/', controller.toggle);
 router.put('/sleep', controller.sleep);
+router.delete('/sleep', controller.cancelSleep);
 
 module.exports = router;

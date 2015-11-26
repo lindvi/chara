@@ -2,12 +2,23 @@
   padding: 5px;
 }
 
+.light__button__group {
+  width: 100px;
+  height: 150px;
+  display: inline-block;
+  text-align: center;
+  .name {
+    font-size: 14px;
+    width: 100%;
+  }
+}
+
 .light__button {
   @extend .animate;
   background-color: transparent;
   border: 0;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   margin: 5px;
   font-size: 40px;
   text-align: center;
@@ -15,7 +26,7 @@
   line-height: 20px;
   outline: none;
   .label {
-    font-size: 20px;
+    font-size: 14px;
   }
 
   .blurred {
@@ -23,6 +34,10 @@
     top: 0;
     width: 0;
   }
+}
+
+.timer {
+  font-size: 14px;
 }
 
 .light__head {
