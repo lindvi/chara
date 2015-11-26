@@ -1,28 +1,33 @@
 <div class="lights vertical--align">
   <div ng-if="lights[1] !== undefined">
-
-    <h3 class="thin light__head">Lampor</h3>
-    <div class="light__box">
-      <button ng-repeat="light in lights track by $index" ng-click="toggleLight($index, light)" class="light__button">
-        <div>
-          <i class="material-icons"><span ng-if="light.state.on">brightness_high</span><span ng-if="!light.state.on">brightness_low</span></i>
-        </div>
-        <span class="label">
-          {{light.name}}
-        </span>
-      </button>
-    </div>
-    <div>
-      <h3 class="thin light__head">Program</h3>
-      <div class="light__box">
-        <button ng-click="usePredefined('sleep')" class="light__button">
+    <div class="">
+      <div class="light__button__group" ng-repeat="light in lights track by $index">
+        <div class="name">{{light.name}}</div>
+        <button class="button" ng-click="increaseBrightness($index, light)">
+          <i class="material-icons"><span>add</span></i>
+        </button>
+        <button ng-click="toggleLight($index, light)" class="light__button">
           <div>
-            <i class="material-icons"><span>brightness_high</span></i>
+            <i class="material-icons"><span ng-if="light.state.on">brightness_high</span><span ng-if="!light.state.on">brightness_low</span></i>
           </div>
           <span class="label">
-            Sova
           </span>
         </button>
+        <button class="button"  ng-click="decreaseBrightness($index, light)">
+          <i class="material-icons"><span>remove</span></i>
+        </button>
+      </div>
+    </div>
+    <div>
+      <div class="divider"></div>
+      <div class="light__button__group" ng-repeat="prefab in prefabs">
+        <div class="name">{{prefab.name}}</div>
+        <button ng-click="usePredefined($index)" class="light__button">
+          <div>
+            <i class="material-icons"><span ng-if="!prefab.active">alarm_on</span><span ng-if="prefab.active">alarm_off</span></i>
+          </div>
+        </button>
+        <div ng-if="prefab.active" class="timer">{{prefab.currentTime.timer}}</div>
       </div>
 
     </div>

@@ -7,7 +7,7 @@ app.directive('traffic', ['TrafficFactory', function (TrafficFactory) {
     link: function ($scope, element, attrs) {
       $scope.currentStation = {};
       $scope.currentStation.Name = 'Gullmarsplan';
-
+      $scope.factory = TrafficFactory;
 
 
       $scope.searchForStation = function() {

@@ -27,8 +27,14 @@ exports.index = function(req, res) {
     });
 
     response.on("end", function (err) {
-      data = JSON.parse(buffer);
-      res.send(data);
+      if (buffer){
+        try{
+          data = JSON.parse(buffer);
+          res.send(data);
+        }catch(e){
+          console.error(e); //error in the above string(in this case,yes)!
+        }
+      }
     });
   });
 };
