@@ -1,4 +1,5 @@
 'use strict';
+/* global app:false */
 
-app.controller('ApplicationController', ['$scope', function($scope){
+app.controller('ApplicationController', [function(){
 }]);

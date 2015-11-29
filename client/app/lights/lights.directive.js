@@ -1,11 +1,12 @@
 'use strict';
+/* global app:false */
 
-app.directive('lights', ['LightFactory', '$timeout', function (LightFactory, $timeout) {
+app.directive('lights', ['LightFactory', function (LightFactory) {
   return {
     templateUrl: 'app/lights/lights.html',
     restrict: 'E',
     replace: true,
-    link: function ($scope, element, attrs) {
+    link: function ($scope) {
       $scope.factory = LightFactory;
       $scope.prefabs = LightFactory.predefined;
       $scope.factory.getLights().success(function(promise){

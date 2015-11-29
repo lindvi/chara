@@ -1,5 +1,5 @@
 'use strict';
+/* global app:false */
 
-app.controller('MainCtrl', function ($scope, $http) {
-  $scope.awesomeThings = [];
+app.controller('MainCtrl', function () {
 });

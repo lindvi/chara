@@ -35,6 +35,7 @@ exports.toggle = function(req, res) {
     json: true,
     body: {"on": (req.body.bri === 0 ? false : req.body.state.on), "bri": (req.body.state.bri >= 250 ? 250 : req.body.state.bri), "xy": req.body.state.xy }
   };
+  var buffer, data;
 
   var callback = function(response) {
     var str = '';
@@ -57,7 +58,7 @@ exports.toggle = function(req, res) {
 
 
   request.put(options, function (error, response, body) {
-    if (!error && response.statusCode == 200) {
+    if (!error && response.statusCode === 200) {
       var resData = {"on": true, "bri": 0, "xy": [0,0]};
       var name = "";
       body.forEach(function(entry){

@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('charaApp')
-  .directive('calendar', function () {
+/* global app:false */
+app.directive('calendar', function () {
     return {
       templateUrl: 'app/calendar/calendar.html',
       restrict: 'EA',
-      link: function (scope, element, attrs) {
+      link: function () {
       }
     };
   });

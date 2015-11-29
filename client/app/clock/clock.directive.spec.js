@@ -6,16 +6,10 @@ describe('Directive: clock', function () {
   beforeEach(module('charaApp'));
   beforeEach(module('app/clock/clock.html'));
 
-  var element, scope;
+  var scope;
 
   beforeEach(inject(function ($rootScope) {
     scope = $rootScope.$new();
   }));
 
-  it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<clock></clock>');
-    element = $compile(element)(scope);
-    scope.$apply();
-    expect(element.text()).toBe('this is the clock directive');
-  }));
 });

@@ -1,4 +1,5 @@
 'use strict';
+/* global app:false */
 
 app.factory('TrafficFactory', ['$http', function ($http) {
   var TrafficFactory = {};
@@ -16,7 +17,7 @@ app.factory('TrafficFactory', ['$http', function ($http) {
       return promise.ResponseData;
     })
     .error(function (promise) {
-      //console.error(promise);
+      console.error(promise);
     });
   };
 

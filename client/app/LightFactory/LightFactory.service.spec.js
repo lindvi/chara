@@ -11,8 +11,5 @@ describe('Service: LightFactory', function () {
     LightFactory = _LightFactory_;
   }));
 
-  it('should do something', function () {
-    expect(!!LightFactory).toBe(true);
-  });
 
 });

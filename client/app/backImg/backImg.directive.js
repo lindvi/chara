@@ -1,4 +1,5 @@
 'use strict';
+/* global app:false */
 
 app.directive('backImg', function () {
   return {

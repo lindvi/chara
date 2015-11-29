@@ -1,10 +1,11 @@
 'use strict';
+/* global app:false */
 
 app.directive('traffic', ['TrafficFactory', function (TrafficFactory) {
   return {
     templateUrl: 'app/traffic/traffic.html',
     restrict: 'EA',
-    link: function ($scope, element, attrs) {
+    link: function ($scope) {
       $scope.currentStation = {};
       $scope.currentStation.Name = 'Gullmarsplan';
       $scope.factory = TrafficFactory;
@@ -32,7 +33,7 @@ app.directive('traffic', ['TrafficFactory', function (TrafficFactory) {
 
       $scope.clearStation = function() {
         $scope.currentStation = false;
-      }
+      };
 
       $scope.searchForStation();
     }

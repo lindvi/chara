@@ -1,11 +1,16 @@
 'use strict';
+/* global app:false */
 
-app.directive('griddly', ['$http', '$window', '$timeout', function ($http, $window, $timeout) {
+app.directive('griddly', ['$http', '$window', '$timeout', 'BackgroundFactory', function ($http, $window, $timeout, BackgroundFactory) {
   return {
     templateUrl: 'app/griddly/griddly.html',
     restrict: 'EA',
-    link: function ($scope, element, attrs) {
-      $scope.pictures = [];
+    link: function ($scope) {
+
+      BackgroundFactory.fetchImages().success(function() {
+        BackgroundFactory.randomImage();
+      });
+
       $scope.grid = {
         pxWidth: 2,
         pxHeight: 2,
@@ -71,29 +76,6 @@ app.directive('griddly', ['$http', '$window', '$timeout', function ($http, $wind
         });
 
       }, 1000);
-
-$http({
-  method: 'GET',
-  url: 'https://www.reddit.com/r/earthporn.json'
-}).success(function(promise) {
-  $scope.pictures = promise.data.children;
-  setBackground(Math.round(Math.random()*$scope.pictures.length));
-});
-
-
-
-
-function setBackground(index) {
-  $scope.background = $scope.pictures[index];
-  if($scope.background.data.domain === 'imgur.com'){
-    $scope.background.data.url = $scope.background.data.url +'.jpg';
-  }
-
-  angular.element('.bgImg').css({
-    'background-image': 'url(' + $scope.background.data.url +')',
-    'background-size' : 'cover'
-  });
-}
 }
 };
 }]);

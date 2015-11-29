@@ -1,11 +1,12 @@
 'use strict';
+/* global app:false */
 
 app.factory('LightFactory', ['$http', '$interval', function ($http, $interval) {
-  var LightService = {}
+  var LightService = {};
 
   LightService.lights = [];
   LightService.predefined = [{
-    active: false, startTime: 300000, currentTime: {milli:300000, timer: "00:00"}, name: 'Sova', api: 'sleep'
+    active: false, startTime: 300000, currentTime: {milli:300000, timer: '00:00'}, name: 'Sova', api: 'sleep'
   }];
   LightService.currentFunction = false;
 
@@ -15,12 +16,12 @@ app.factory('LightFactory', ['$http', '$interval', function ($http, $interval) {
     }).error(function(promise){
       console.error(promise);
     });
-  }
+  };
 
   LightService.toggleLight = function(index, light){
 
     var param = {id: (index+1), state: {}};
-    param.state = {"on":!light.state.on, "bri": 254, "xy":[0.4236,0.3811]}
+    param.state = {'on':!light.state.on, 'bri': 254, 'xy':[0.4236,0.3811]};
     return $http({
       method: 'PUT',
       url: '/api/lights',
@@ -38,7 +39,7 @@ app.factory('LightFactory', ['$http', '$interval', function ($http, $interval) {
 
   LightService.increase = function(index, light){
     var param = {id: (index+1), state: {}};
-    param.state = {"on":true, "bri": light.state.bri+25, "xy":[0.4236,0.3811]}
+    param.state = {'on':true, 'bri': light.state.bri+25, 'xy':[0.4236,0.3811]};
     return $http({
       method: 'PUT',
       url: '/api/lights/',
@@ -58,7 +59,7 @@ app.factory('LightFactory', ['$http', '$interval', function ($http, $interval) {
 
   LightService.decrease = function(index, light){
     var param = {id: (index+1), state: {}};
-    param.state = {"on":true, "bri": light.state.bri-25, "xy":[0.4236,0.3811]}
+    param.state = {'on':true, 'bri': light.state.bri-25, 'xy':[0.4236,0.3811]};
     return $http({
       method: 'PUT',
       url: '/api/lights',
@@ -82,7 +83,7 @@ app.factory('LightFactory', ['$http', '$interval', function ($http, $interval) {
       url: '/api/lights/' + LightService.predefined[index].api,
       json: true,
       headers: { 'Content-Type': 'application/json' }
-    }).success(function(promise) {
+    }).success(function() {
         LightService.predefined[index].currentTime.milli = LightService.predefined[index].startTime;
         LightService.predefined[index].currentTime.timer = msToTime(LightService.predefined[index].currentTime.milli);
 
@@ -124,16 +125,15 @@ app.factory('LightFactory', ['$http', '$interval', function ($http, $interval) {
   }
 
   function msToTime(duration) {
-    var milliseconds = parseInt((duration%1000)/100)
-    , seconds = parseInt((duration/1000)%60)
-    , minutes = parseInt((duration/(1000*60))%60)
-    , hours = parseInt((duration/(1000*60*60))%24);
+    var seconds = parseInt((duration/1000)%60);
+    var minutes = parseInt((duration/(1000*60))%60);
+    var hours = parseInt((duration/(1000*60*60))%24);
 
-    hours = (hours < 10) ? "0" + hours : hours;
-    minutes = (minutes < 10) ? "0" + minutes : minutes;
-    seconds = (seconds < 10) ? "0" + seconds : seconds;
+    hours = (hours < 10) ? '0' + hours : hours;
+    minutes = (minutes < 10) ? '0' + minutes : minutes;
+    seconds = (seconds < 10) ? '0' + seconds : seconds;
 
-    return (minutes.length === 1 ? "0"+minutes : minutes) + ":" + (seconds.length === 1 ? "0" + seconds : seconds);
+    return (minutes.length === 1 ? '0'+minutes : minutes) + ':' + (seconds.length === 1 ? '0' + seconds : seconds);
   }
   return LightService;
 }]);
