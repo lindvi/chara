@@ -7,6 +7,9 @@
 
   .page__slide {
     @extend .animate;
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 
   .container {
@@ -58,9 +61,54 @@
   span,
   div {
     filter: blur(0px);
-   -webkit-filter: blur(0px);
-   -moz-filter: blur(0px);
-   -o-filter: blur(0px);
-   -ms-filter: blur(0px);
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
+  }
+}
+
+
+.grid__display {
+  position: fixed;
+  bottom: 0px;
+  left: 4px;
+  min-width: 80px;
+  min-height: 50px;
+  z-index: 200;
+  background: transparent;
+
+  button {
+    @extend .animate;
+    width: 38px;
+    height: 32px;
+    border: 0;
+    margin: 0;
+    height: 20px;
+    background: rgba(white, .2);
+    border-radius: 3px;
+    margin: 2px;
+    position: relative;
+    cursor: pointer;
  }
+
+  &:hover {
+    button {
+      background: rgba(white, .6);
+    }
+  }
+
+  .indicator {
+    width: 33px;
+    height: 15px;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    margin: 5px;
+    z-index: 100;
+    border-radius: 3px;
+    background: rgba(white, .5);
+
+  }
+
 }

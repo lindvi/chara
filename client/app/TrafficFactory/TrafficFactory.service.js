@@ -5,7 +5,7 @@ app.factory('TrafficFactory', ['$http', function ($http) {
   var TrafficFactory = {};
   TrafficFactory.stations = [];
 
-  TrafficFactory.stations = function(param) {
+  TrafficFactory.fetchStations = function(param) {
     return $http({
       method: 'POST',
       url: '/api/traffic',

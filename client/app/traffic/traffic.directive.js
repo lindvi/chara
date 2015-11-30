@@ -12,7 +12,7 @@ app.directive('traffic', ['TrafficFactory', function (TrafficFactory) {
 
 
       $scope.searchForStation = function() {
-        TrafficFactory.stations({'station': $scope.currentStation.Name, 'stationsOnly': true, 'maxResults': 5}).success(function(promise){
+        $scope.factory.fetchStations({'station': $scope.currentStation.Name, 'stationsOnly': true, 'maxResults': 5}).success(function(promise){
           $scope.stations = promise.ResponseData;
           $scope.checkTimetable($scope.stations[0]);
 

@@ -1,11 +1,19 @@
 <div class="griddly" id="grid">
   <div class="bgImg"></div>
-  <div class="page__slide" ng-style="{width: grid.columns*grid.pxWidth + 'px', height: grid.rows*grid.pxWidth + 'px'}">
+  <div class="page__slide" ng-style="{width: grid.columns*grid.pxWidth + 'px', height: grid.rows*grid.pxWidth + 'px', transform: 'translateX(-'+ (grid.pxWidth*grid.currentX) +'px) translateY(-' + (grid.pxHeight*grid.currentY) + 'px)'}">
     <div class="container" ng-repeat="container in grid.containers" ng-style="{top: container.posY + 'px', left: container.posX + 'px', width: container.htmlWidth + 'px', height: container.htmlHeight + 'px'}">
       <div class="blurred" ng-if="container.blur"></div>
       <div class="card shadow--1"  ng-class="{'default': container.default}">
         <ng-include src="container.view" class="center--align block">
       </div>
     </div>
+  </div>
+
+  <div class="grid__display">
+    <div ng-repeat="row in range(grid.rows) track by $index" class="row">
+      <button ng-repeat="row in range(grid.columns) track by $index" ng-click="goToPage($index, $parent.$index)" ng-class="{active: (grid.currentX === $index && grid.currentY === $parent.$index)}">
+      </button>
+    </div>
+    <div class="indicator"></div>
   </div>
 </div>

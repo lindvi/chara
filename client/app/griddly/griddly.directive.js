@@ -20,6 +20,8 @@ app.directive('griddly', ['$http', '$window', '$timeout', 'BackgroundFactory', f
         },
         rows: 2,
         columns: 2,
+        currentX: 0,
+        currentY: 0,
         containers: [],
         init: function(){
           $scope.grid.pxWidth = angular.element('body').width();
@@ -76,6 +78,15 @@ app.directive('griddly', ['$http', '$window', '$timeout', 'BackgroundFactory', f
         });
 
       }, 1000);
+
+      $scope.goToPage = function(x, y) {
+        $scope.grid.currentX = x;
+        $scope.grid.currentY = y;
+      };
+
+      $scope.range = function(n) {
+        return new Array(n);
+      };
 }
 };
 }]);

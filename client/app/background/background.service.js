@@ -21,7 +21,7 @@ app.factory('BackgroundFactory', ['$http', function ($http) {
 
   backgroundFactory.setImage = function(index) {
     backgroundFactory.current = backgroundFactory.images[index];
-    if(backgroundFactory.current.data.domain === 'imgur.com'){
+    if(backgroundFactory.current !== undefined && backgroundFactory.current.data.domain === 'imgur.com'){
       backgroundFactory.current.data.url = backgroundFactory.current.data.url +'.jpg';
     }
 
