@@ -14,6 +14,6 @@
       <button ng-repeat="row in range(grid.columns) track by $index" ng-click="goToPage($index, $parent.$index)" ng-class="{active: (grid.currentX === $index && grid.currentY === $parent.$index)}">
       </button>
     </div>
-    <div class="indicator"></div>
+    <div class="indicator" ng-style="{transform: 'translateX(' + grid.currentX*42 + 'px) translateY(' + grid.currentY*24 + 'px)'}"></div>
   </div>
 </div>
