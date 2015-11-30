@@ -10,6 +10,9 @@
     <button class="left__state" ng-click="clearStation()">
       <i class="material-icons">clear</i>
     </button>
+    <button class="left__state" ng-click="checkTimetable(currentStation)">
+      <i class="material-icons">refresh</i>
+    </button>
   </div>
   <div ng-if="currentStation">
     <div class="metro__direction">
@@ -18,7 +21,7 @@
       </div>
     </div>
     <div class="metro__direction">
-      <div ng-repeat="line in currentStation.info.Metros" class="metro__line" ng-if="line.JourneyDirection === 2">
+      <div ng-repeat="line in currentStation.info.Metros track by $index" class="metro__line" ng-if="line.JourneyDirection === 2">
         <i class="material-icons">directions_subway</i> <span>{{line.Destination}} - {{line.DisplayTime}}</span>
       </div>
     </div>
