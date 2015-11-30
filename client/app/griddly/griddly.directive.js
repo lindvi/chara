@@ -40,7 +40,7 @@ app.directive('griddly', ['$http', '$window', '$timeout', 'BackgroundFactory', f
         $scope.grid.init();
         $scope.grid.add({
           width: 1,
-          height: 1,
+          height: 2,
           x: 0,
           y: 0,
           color: '#'+Math.floor(Math.random()*16777215).toString(16),
@@ -87,6 +87,11 @@ app.directive('griddly', ['$http', '$window', '$timeout', 'BackgroundFactory', f
       $scope.range = function(n) {
         return new Array(n);
       };
+
+      $scope.swipe = function(dir) {
+        console.log(dir);
+      };
+
 }
 };
 }]);

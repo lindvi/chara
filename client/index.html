@@ -32,15 +32,15 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
       <div class="fixed__controls">
-        <button>
-          <i class="material-icons">developer_mode</i>
+        <button ng-click="toggleMenu()">
+          <i class="material-icons">menu</i>
         </button>
         <button ng-click="randomizeBackground()">
           <i class="material-icons">refresh</i>
         </button>
       </div>
       <!-- Add your site or application content here -->
-      <div ui-view=""></div>
+      <div ui-view="" class="shadow-z-1 animate" ng-class="{'menu--open': menu}"></div>
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -55,6 +55,8 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/lodash/dist/lodash.compat.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/hammerjs/hammer.js"></script>
+    <script src="bower_components/angular-gestures/gestures.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

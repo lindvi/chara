@@ -5,13 +5,15 @@ var app = angular.module('charaApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ui.router'
+  'ui.router',
+  'angular-gestures'
 ]);
 
 
-app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+app.config(function ($stateProvider, $urlRouterProvider, $locationProvider,  hammerDefaultOptsProvider) {
     $urlRouterProvider
       .otherwise('/');
 
     $locationProvider.html5Mode(true);
+
   });

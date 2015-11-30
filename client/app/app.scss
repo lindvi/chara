@@ -12,6 +12,7 @@ $material-path: "/bower_compontents/material-design-icons/iconfont/";
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   text-shadow: 2px 2px 4px rgba(black, .5);
+  background: #2a2a2a;
 }
 
 .browsehappy {
@@ -73,6 +74,10 @@ $material-path: "/bower_compontents/material-design-icons/iconfont/";
 
 .no--margin {
   margin: 0;
+}
+
+.menu--open {
+  transform: translateX(45px);
 }
 
 .pull--left {
